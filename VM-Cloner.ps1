@@ -1,5 +1,7 @@
 # PowerShell/PowerCLI - VMware-VM-Cloner/VM-Cloner.ps1
 # Clone multiple VMware virtual machines to a different Datastore as a backup.
+#
+# by RaveMaker - http://ravemaker.net
 
 # use PowerCLI/PowerShell Switches
 $CLIMode = "PowerCLI"
