@@ -13,7 +13,7 @@ if ($CLIMode -eq "PowerShell") {
 }
 
 # Backup = True : Appends date to VM name;
-# Backup =  False : Creates a clone with the same VM name.
+# Backup = False : Creates a clone with the same VM name.
 $Backup = "True"
 
 # DebugMode = True : Will not clone VM
@@ -24,8 +24,8 @@ $DebugMode = "True"
 $BackupDate = (get-date -uformat %Y-%m-%d)
 
 # Log File.
-$LogFile =  "VM-Cloner-" + $BackupDate + ".txt"
-echo  "Backup started at ($BackupDate) - ($LogFile)" >> $LogFile
+$LogFile = "VM-Cloner-" + $BackupDate + ".txt"
+echo "Backup started at ($BackupDate) - ($LogFile)" >> $LogFile
 
 # vCenter Server and Credentials - leave blank to use without user and password
 $vCenter = "vc-hostname.domain"
@@ -59,7 +59,7 @@ $TargetResourcePool = "AutoBackup"
 $VMwareServers = Get-VM -Location $SourceFolder
 
 # Loop through servers 
-echo  "Begin ($SourceFolder)" >> $LogFile
+echo "Begin ($SourceFolder)" >> $LogFile
 foreach ($VM in $VMwareServers)
 {
 
@@ -76,7 +76,7 @@ $VMName = $VM.name
 $VMtarget = $VM.name 
 $Datastore = Get-Datastore $Datastore -vmhost $TargetHost
 
-if ($Backup -eq "True")  {
+if ($Backup -eq "True") {
   # Clone the VM to vmname-Backup-date
   $VMtarget = $VMtarget + "-" + "Backup-" + $BackupDate
 }
@@ -91,10 +91,10 @@ if ($DebugMode -ne "TRUE") {
 
 # Check if Clone succeded and log the status.
 if (Get-VM $VMtarget) {
-  echo  "Cloned $VMName to $VMtarget on $TargetHost disk $Datastore resource pool $TargetResourcePool" >> $LogFile
+  echo "Cloned $VMName to $VMtarget on $TargetHost disk $Datastore resource pool $TargetResourcePool" >> $LogFile
 }
 else {
-  echo  "Failed Cloning $VMName to $VMtarget on $TargetHost"  >> $LogFile
+  echo "Failed Cloning $VMName to $VMtarget on $TargetHost"  >> $LogFile
 }
 # End foreach loop through servers
 }
