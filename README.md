@@ -11,7 +11,7 @@ Clone multiple VMware virtual machines to a different Datastore as a backup
 
 #### Your vCenter server and credentials: 
 - $vcenter = "vc.domain"
-- $username = "" - Can be blank to use current user credentials
+- $username = "" - leave blank to use current user credentials
 - $password = ""
 
 #### sourceLocation is a folder in your vcenter structure.
