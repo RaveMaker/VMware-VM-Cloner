@@ -9,27 +9,27 @@ Clone multiple VMware virtual machines to a different Datastore as a backup
 
 2. Edit the VM-Cloner.ps1 file and replace the following values:
 
-#### Your vCenter server and credentials: 
+##### Your vCenter server and credentials: 
 - $vcenter = "vc.domain"
 - $username = "" - leave blank to use current user credentials
 - $password = ""
 
-#### sourceLocation is a folder in your vcenter structure.
+##### sourceLocation is a folder in your vcenter structure.
 - $sourceLocation = "Production"
 
-#### Target Datastore
+##### Target Datastore
 - $datastore = "ESX1"
 
-#### Target location - existing folder in vcenter structure, where the clones will be stored
+##### Target location - existing folder in vcenter structure, where the clones will be stored
 - $targetlocation = "AutoBackup"
 
-#### Datacenter name
+##### Datacenter name
 - $datacenter = "DC1"
 
-#### Target Resource Pool
+##### Target Resource Pool
 - $targetResourcePool = "AutoBackup"
 
-#### Target Host
+##### Target Host
 - $targethost = "" - hostname.domain or leave blank to use current VM host as target
 
 
