@@ -33,5 +33,6 @@ Clone multiple VMware virtual machines to a different Datastore as a backup
  - $targethost = "" - hostname.domain or leave blank to use current VM host as target
 
 
-by [RaveMaker][RaveMaker].
+Author: [RaveMaker][RaveMaker].
+
 [RaveMaker]: http://ravemaker.net
